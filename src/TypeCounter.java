@@ -73,14 +73,14 @@ public class TypeCounter {
  	*/
 	public static String getFileContent(String filePath) throws FileNotFoundException, IOException
 	{
-		BufferedReader buff = new BufferedReader(new FileReader(filePath));
+		BufferedReader buffer = new BufferedReader(new FileReader(filePath));
 		StringBuilder builder = new StringBuilder();
-		String line = buff.readLine();
+		String line = buffer.readLine();
 		while(line != null)
 		{
 			builder.append(line);
 			builder.append(System.lineSeparator());
-			line = buff.readLine();
+			line = buffer.readLine();
 		
 		}
 	
