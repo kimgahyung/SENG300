@@ -8,6 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 
 /**
  * This class takes a pathname and name of Java Type and counts the number 
@@ -129,27 +130,38 @@ public class TypeCounter {
 	 * @author
 	 * @param cu CompilationUnit of the created AST
 	 */
-	public void count(CompilationUnit cu) {
-		
-		
+	public void countTypes(CompilationUnit cu) {
+		cu.accept(new ASTVisitor() {
+			
+		});
+
 	}
 	
 	/**
 	 * Main method for the class TypeCounter. 
 	 * Takes user inputs for the pathname and the type.
 	 * 
-	 * @author
+	 * @author Zahra Al Ibrahim, Ga Hyung Kim
 	 * @param args
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
+		Scanner keyboard = new Scanner(System.in);
+		
+		// Take the user input for the pathname
+		System.out.print("Enter the pathname: ");
+		String pathInput = keyboard.next();
+
+		// Take the user input for the type 
+		System.out.print("Enter the fully qualified name of a Java type: ");
+		String typeInput = keyboard.next();
 		
 		// testing getFilePaths and getFileContent
-		String[] paths = getFilesPaths("C:\\Users\\Zahra\\Desktop\\Java\\Pong");
+		String[] paths = getFilesPaths(pathInput);
 		String content = null;
 		for(int i=0 ; i < paths.length; i++)
 		{
 		 	content = getFileContent(paths[i]);
-		 	//System.out.println(content);
+		 	System.out.println(content);
 		}
 		
 	}
