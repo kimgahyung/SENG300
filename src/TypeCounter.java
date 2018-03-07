@@ -14,11 +14,9 @@ import java.io.IOException;
  * of declarations of that type within that directory and counts the number 
  * of references to each occurrence of that type within that directory.
  * 
- * @author 
+ * @author Zahra Al Ibrahim, Tylor Chow, Ga Hyung Kim
  *
  */
-
-
 public class TypeCounter {
 	
 	static int declarationCounter;
@@ -31,13 +29,15 @@ public class TypeCounter {
 	}
 
 	
-	/***
- 	* @param directoryPath
- 	* @return an array of strings with the paths of .java files in directoryPath
- 	* @throws FileNotFoundException
- 	* @throws IOException
- 	* @author Zahra Al Ibrahim
- 	*/
+	/**
+	 * This method gets directory as an argument and returns an array of strings with the path 
+	 * of .java files in directory.
+	 * @param directoryPath
+	 * @return an array of strings with the paths of .java files in directoryPath
+	 * @throws FileNotFoundException
+ 	 * @throws IOException
+ 	 * @author Zahra Al Ibrahim
+ 	 */
 	public static String[] getFilesPaths(String directoryPath) throws FileNotFoundException, IOException
 	{
 		File dir = new File(directoryPath);
@@ -76,16 +76,14 @@ public class TypeCounter {
 		 return paths;
 	}
 
-
-
-	/***
- 	* 
- 	* @param filePath
- 	* @return the content of file as a string
- 	* @throws FileNotFoundException
- 	* @throws IOException
- 	* @author Zahra Al Ibrahim
- 	*/
+	/**
+	 * This method reads the file and returns the file contents as string.
+	 * @param filePath
+	 * @return the content of file as a string
+	 * @throws FileNotFoundException
+	 * @throws IOException
+	 * @author Zahra Al Ibrahim
+	 */
 	public static String getFileContent(String filePath) throws FileNotFoundException, IOException
 	{
 		BufferedReader buffer = new BufferedReader(new FileReader(filePath));
@@ -106,8 +104,7 @@ public class TypeCounter {
 
 		
 	/**
-	 * This method parses java source file and creates AST and returns 
-	 * the tree.
+	 * This method parses java source file and creates AST and returns the root of AST.
 	 * 
 	 * @author Ga Hyung Kim
 	 * @return cu CompilationUnit of created AST
