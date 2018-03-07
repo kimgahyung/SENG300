@@ -2,7 +2,6 @@ import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.IfStatement;
 
 import java.awt.List;
 import java.io.BufferedReader;
@@ -166,9 +165,6 @@ public class TypeCounter {
 		 	content = tc.getFileContent(paths[i]);
 		 	System.out.println(content);
 		}
-		
-		tc.countTypes(tc.parseFiles(content));
-		System.out.println(exampleCounter);
 		
 	}
 
