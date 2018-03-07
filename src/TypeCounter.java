@@ -1,3 +1,8 @@
+import org.eclipse.jdt.core.dom.AST;
+import org.eclipse.jdt.core.dom.ASTParser;
+import org.eclipse.jdt.core.dom.ASTVisitor;
+import org.eclipse.jdt.core.dom.CompilationUnit;
+
 /**
  * This class takes a pathname and name of Java Type and counts the number 
  * of declarations of that type within that directory and counts the number 
@@ -15,6 +20,15 @@ import java.io.IOException;
 
 public class TypeCounter {
 	
+	static int declarationCounter;
+	static int referenceCounter;
+	
+	// Constructor
+	TypeCounter() {
+		declarationCounter = 0;
+		referenceCounter = 0;
+	}
+
 	
 	/***
  	* @param directoryPath
@@ -86,29 +100,39 @@ public class TypeCounter {
 	
 		String fileContent = builder.toString();
 		return fileContent;
-		
 	}
-	
+
+
 		
 	/**
 	 * This method parses java source file and creates AST and returns 
 	 * the tree.
 	 * 
-	 * @author
+	 * @author Ga Hyung Kim
+	 * @return cu CompilationUnit of created AST
 	 */
-	public void parseFiles() {
+	public CompilationUnit parseFiles(String sourceString) {
+		ASTParser parser = ASTParser.newParser(AST.JLS8);
 		
+		parser.setKind(ASTParser.K_COMPILATION_UNIT);
+		parser.setSource(sourceString.toCharArray());
+		parser.setResolveBindings(true);
+
+		CompilationUnit cu = (CompilationUnit) parser.createAST(null);
+		
+		return cu;
 	}
 	
 	/**
 	 * This method takes AST and counts the number of declarations of that 
 	 * type with the given directory and counts the number of references to 
 	 * each occurrences of that type within that directory. 
-	 * And print to the console.
 	 * 
 	 * @author
+	 * @param cu CompilationUnit of the created AST
 	 */
-	public void count() {
+	public void count(CompilationUnit cu) {
+		
 		
 	}
 	
