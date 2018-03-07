@@ -2,6 +2,8 @@ import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.IfStatement;
+
 import java.awt.List;
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,6 +24,7 @@ public class TypeCounter {
 	
 	static int declarationCounter;
 	static int referenceCounter;
+	static int exampleCounter = 0;
 	
 	// Constructor
 	TypeCounter() {
@@ -39,7 +42,7 @@ public class TypeCounter {
  	 * @throws IOException
  	 * @author Zahra Al Ibrahim
  	 */
-	public static String[] getFilesPaths(String directoryPath) throws FileNotFoundException, IOException
+	public String[] getFilesPaths(String directoryPath) throws FileNotFoundException, IOException
 	{
 		File dir = new File(directoryPath);
 	
@@ -85,7 +88,7 @@ public class TypeCounter {
 	 * @throws IOException
 	 * @author Zahra Al Ibrahim
 	 */
-	public static String getFileContent(String filePath) throws FileNotFoundException, IOException
+	public String getFileContent(String filePath) throws FileNotFoundException, IOException
 	{
 		BufferedReader buffer = new BufferedReader(new FileReader(filePath));
 		StringBuilder builder = new StringBuilder();
@@ -132,10 +135,9 @@ public class TypeCounter {
 	 */
 	public void countTypes(CompilationUnit cu) {
 		cu.accept(new ASTVisitor() {
-			
 		});
 
-	}
+	} 
 	
 	/**
 	 * Main method for the class TypeCounter. 
@@ -145,6 +147,7 @@ public class TypeCounter {
 	 * @param args
 	 */
 	public static void main(String[] args) throws FileNotFoundException, IOException {
+		TypeCounter tc = new TypeCounter();
 		Scanner keyboard = new Scanner(System.in);
 		
 		// Take the user input for the pathname
@@ -156,13 +159,16 @@ public class TypeCounter {
 		String typeInput = keyboard.next();
 		
 		// testing getFilePaths and getFileContent
-		String[] paths = getFilesPaths(pathInput);
+		String[] paths = tc.getFilesPaths(pathInput);
 		String content = null;
 		for(int i=0 ; i < paths.length; i++)
 		{
-		 	content = getFileContent(paths[i]);
+		 	content = tc.getFileContent(paths[i]);
 		 	System.out.println(content);
 		}
+		
+		tc.countTypes(tc.parseFiles(content));
+		System.out.println(exampleCounter);
 		
 	}
 
