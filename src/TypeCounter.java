@@ -2,6 +2,8 @@ import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
 import org.eclipse.jdt.core.dom.CompilationUnit;
+import org.eclipse.jdt.core.dom.ITypeBinding;
+import org.eclipse.jdt.core.dom.TypeDeclaration;
 
 import java.awt.List;
 import java.io.BufferedReader;
@@ -112,13 +114,16 @@ public class TypeCounter {
 	 * @author Ga Hyung Kim
 	 * @return cu CompilationUnit of created AST
 	 */
-	public CompilationUnit parseFiles(String sourceString) {
+	public CompilationUnit parseFiles(String sourceString, String[] sourcepathEntries) {
 		ASTParser parser = ASTParser.newParser(AST.JLS8);
 		
 		parser.setKind(ASTParser.K_COMPILATION_UNIT);
 		parser.setSource(sourceString.toCharArray());
 		parser.setResolveBindings(true);
-
+		parser.setBindingsRecovery(true);
+		parser.setEnvironment(null, sourcepathEntries, null, true);
+		parser.setUnitName("test name");
+		
 		CompilationUnit cu = (CompilationUnit) parser.createAST(null);
 		
 		return cu;
@@ -151,20 +156,31 @@ public class TypeCounter {
 		
 		// Take the user input for the pathname
 		System.out.print("Enter the pathname: ");
-		String pathInput = keyboard.next();
-
+		//String pathInput = keyboard.next();
+		
+		// TESTING
+		//String pathInput = "W:\\PROGRAMMING\\workspace\\HelloWorld\\src";
+		String pathInput = "W:\\PROGRAMMING\\workspace\\Tet\\src\\logic";
+		
 		// Take the user input for the type 
 		System.out.print("Enter the fully qualified name of a Java type: ");
 		String typeInput = keyboard.next();
-		
 		// testing getFilePaths and getFileContent
 		String[] paths = tc.getFilesPaths(pathInput);
-		String content = null;
+		
+		String[] content = new String[paths.length];
 		for(int i=0 ; i < paths.length; i++)
 		{
-		 	content = tc.getFileContent(paths[i]);
-		 	System.out.println(content);
+		 	content[i] = tc.getFileContent(paths[i]);
+		 	//System.out.println(content[i]);
+		 	CompilationUnit cu = tc.parseFiles(content[i], new String[] {pathInput});
+		 	tc.countTypes(cu, content[i]);
 		}
+		
+		
+		//
+
+		
 		
 	}
 
