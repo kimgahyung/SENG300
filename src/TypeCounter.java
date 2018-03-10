@@ -1,4 +1,3 @@
-
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTParser;
@@ -11,7 +10,6 @@ import org.eclipse.jdt.core.dom.PrimitiveType;
 import org.eclipse.jdt.core.dom.QualifiedName;
 import org.eclipse.jdt.core.dom.SimpleName;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -20,9 +18,14 @@ import java.io.IOException;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * This class takes a pathname indicating a directory of interest and a string
+ * indicating a fully qualified name of a Java Type and counts the number of 
+ * declarations of that type within that directory and the number of each 
+ * occurrences of that type within that directory.
+ */
 public class TypeCounter
-{
-		
+{		
 		static int declarationCounter;
 		static int referenceCounter ;
 		
@@ -59,7 +62,6 @@ public class TypeCounter
 			
 			
 		}
-
 		
 		/**
 		 * This method gets directory as an argument and returns an array of strings with the path 
@@ -148,9 +150,7 @@ public class TypeCounter
 			String fileContent = builder.toString();
 			return fileContent;
 		}
-
-
-			
+		
 		/**
 		 * This method parses java source file and creates AST and returns the root of AST.
 		 * 
