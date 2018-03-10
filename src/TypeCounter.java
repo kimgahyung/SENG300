@@ -253,7 +253,7 @@ public class TypeCounter
 					if (node.getFullyQualifiedName().equals(type))
 					{
 						System.out.println("Qualified name");
-						 declarationCounter += 1;
+						referenceCounter += 1;
 					}
 					
 					return true;
@@ -269,7 +269,7 @@ public class TypeCounter
 					if (node.getFullyQualifiedName().equals(type))
 					{
 						System.out.println(node.getFullyQualifiedName());
-						 declarationCounter += 1;
+						referenceCounter += 1;
 					}
 					
 					return true;
