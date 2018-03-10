@@ -296,16 +296,10 @@ public class TypeCounter
 		 */
 		public static void main(String[] args) throws FileNotFoundException, IOException {
 			TypeCounter p = new TypeCounter();
-			Scanner keyboard = new Scanner(System.in);
 			
-			// Take the user input for the pathname
-			System.out.print("Enter the pathname: ");
-			//String pathInput = keyboard.next();
-			String pathInput = "C:\\Users\\Zahra\\eclipse-workspace\\Test\\src\\NewTest";
-
-			// Take the user input for the type 
-			System.out.print("Enter the fully qualified name of a Java type: ");
-			String typeInput = keyboard.next();
+			// getting path and type from command line
+			String pathInput = args[0];
+			String typeInput = args[1];
 			
 			// testing getFilePaths and getFileContent
 			int javaFilesCounter = p.countJavaFiles(pathInput);
