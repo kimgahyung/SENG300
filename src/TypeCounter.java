@@ -46,7 +46,6 @@ public class TypeCounter
 			
 			String fileName = null;
 			
-			
 			 for (File f : files) 
 			 {
 				 fileName = f.getName();
@@ -112,7 +111,7 @@ public class TypeCounter
 			 for (File f : files) 
 			 {
 				 fileName = f.getName();
-				 
+				
 				 if(f.isFile() && fileName.endsWith(".java"))
 				 {
 					 names[i] = fileName;
@@ -173,11 +172,6 @@ public class TypeCounter
 			parser.setCompilerOptions(options);
 
 			CompilationUnit cu = (CompilationUnit) parser.createAST(null);
-			
-			if (cu.getAST().hasBindingsRecovery()) {
-			
-				System.out.println("Binding activated.");
-			}
 			
 			return cu;
 		}
@@ -300,7 +294,6 @@ public class TypeCounter
 			String pathInput = args[0];
 			String typeInput = args[1];
 			
-			// testing getFilePaths and getFileContent
 			int javaFilesCounter = p.countJavaFiles(pathInput);
 			String[] paths = p.getFilesPaths(pathInput, javaFilesCounter );
 			String[] names = p.getFilesNames(pathInput, javaFilesCounter );
@@ -311,8 +304,7 @@ public class TypeCounter
 			 	CompilationUnit cu = p.parseFiles(content, names[i], new String[] {pathInput});
 			 	p.countTypes(cu , typeInput);
 			}
-			System.out.println("Declarations: " +declarationCounter);
-			System.out.println("References: " + referenceCounter);
+			System.out.println(typeInput + ". Declarations found:" +declarationCounter + "; References found:" +referenceCounter);
 			
 		}
 
