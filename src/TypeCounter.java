@@ -25,8 +25,8 @@ import java.util.Map;
  */
 public class TypeCounter
 {		
-		static int declarationCounter;
-		static int referenceCounter ;
+		private static int declarationCounter;
+		private static int referenceCounter ;
 		
 		// Constructor
 		TypeCounter() {
