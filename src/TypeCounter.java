@@ -29,7 +29,7 @@ public class TypeCounter
 		private static int referenceCounter ;
 		
 		// Constructor
-		public TypeCounter() {
+		TypeCounter() {
 			declarationCounter = 0;
 			referenceCounter = 0;
 		}
