@@ -1,3 +1,3 @@
 public class OneReference {
-	String word = "Example word!";
+	java.lang.String word = "Example word!";
 }

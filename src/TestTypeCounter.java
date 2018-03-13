@@ -234,7 +234,7 @@ public class TestTypeCounter {
 		assertEquals(1, tc.getDeclarationCounter());
 	}
 	
-	/*
+	
 	@Test
 	public void testCountTypesForOneStringReference() throws FileNotFoundException, IOException {
 		String fileName = "OneReference.java";
@@ -245,7 +245,7 @@ public class TestTypeCounter {
 		
 		assertEquals(1, tc.getReferenceCounter());
 	}
-	*/
+	
 	
 	@Test
 	public void testCountTypesForEmptyFile() throws FileNotFoundException, IOException {
@@ -262,17 +262,7 @@ public class TestTypeCounter {
 	/*
 	 * Test the program TypeCounter.
 	 * All the methods work correctly if executed separately.
-	 */
-	
-	/*
-	 * Assertion error
-	@Test(expected = NullPointerException.class)
-	public void testTypeCounterForNoFile() throws FileNotFoundException, IOException {
-		String[] args = {NO_FILE_DIR, "int"};
-		tc.main(args);	
-	}
-	*/
-	
+	 */	
 	@Test
 	public void testTypeCounterForOneFile() throws FileNotFoundException, IOException {
 		// Type = "int" 

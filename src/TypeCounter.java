@@ -55,7 +55,7 @@ public class TypeCounter
 			File[] files = dir.listFiles();
 			
 			String fileName = null;
-			
+
 			 for (File f : files) 
 			 {
 				 fileName = f.getName();
@@ -65,6 +65,7 @@ public class TypeCounter
 					 javaFilesCounter += 1; 
 				 }	
 			 }
+			
 			 return javaFilesCounter;	
 		}
 		
@@ -280,8 +281,8 @@ public class TypeCounter
 			String typeInput = args[1];
 			
 			int javaFilesCounter = p.countJavaFiles(pathInput);
-			String[] paths = p.getFilesPaths(pathInput, javaFilesCounter );
-			String[] names = p.getFilesNames(pathInput, javaFilesCounter );
+			String[] paths = p.getFilesPaths(pathInput, javaFilesCounter);
+			String[] names = p.getFilesNames(pathInput, javaFilesCounter);
 			String content = null;
 			for(int i=0 ; i < paths.length; i++)
 			{
