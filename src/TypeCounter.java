@@ -200,7 +200,7 @@ public class TypeCounter
 					
 					return true;
 				}
-			
+			 
 				public boolean visit(TypeDeclaration node) {
 					
 					ITypeBinding iType = node.resolveBinding();
