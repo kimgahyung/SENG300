@@ -16,9 +16,13 @@ import org.junit.Test;
  */
 public class TestTypeCounter {
 	
+	/*
+	 * Path names used for testing. 
+	 * BASEDIR should be changed.
+	 * SEPARATE_CHAR and pathNames should be changed if the operating system is not Windows.
+	 */	
 	private static String BASEDIR = "C:\\Users\\kimga";
-	private String SEPARATE_CHAR = "\\";
-	
+	private String SEPARATE_CHAR = "\\";	
 	// Array of pathnames 
 	// {no file, nonexisting directory, Directory with one file, multiple files, various files}
 	private String[] pathNames = {"\\Desktop\\SENG300-groupProj\\ExampleFiles\\noFile", 
@@ -270,15 +274,18 @@ public class TestTypeCounter {
 		tc.main(args);
 		assertEquals(8, tc.getReferenceCounter());
 		
-		/*
-		// Type = "java.lang.String"
-		args[1] = "java.lang.String";
-		tc.main(args);
-		assertEquals(4, tc.getReferenceCounter());
-		*/
-
 		// Type = "Example"
 		args[1] = "Example";
+		tc.main(args);
+		assertEquals(1, tc.getDeclarationCounter());
+		
+		// Type = "Example.dummyInterface"
+		args[1] = "Example.dummyInterface";
+		tc.main(args);
+		assertEquals(1, tc.getDeclarationCounter());
+		
+		// Type = "Example.Color"
+		args[1] = "Example.Color";
 		tc.main(args);
 		assertEquals(1, tc.getDeclarationCounter());
 	}
@@ -288,8 +295,9 @@ public class TestTypeCounter {
 		
 	}
 	
-	@Test
+	@Test(expected = NullPointerException.class)
 	public void testTypeCounterForNonexistingDirectory() throws FileNotFoundException, IOException {
-		
+		String[] args = {NONEXISTING_DIR, "SOME_TYPE"};
+		tc.main(args);		
 	}
 }

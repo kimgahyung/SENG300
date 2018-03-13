@@ -1,5 +1,7 @@
 public class Example {
 	
+    enum Color = {RED, ORANGE, YELLOW, GREEN, BLUE, NAVY, VIOLET}
+    
 	public int add(int x, int y) {
 		System.out.println("You are adding two numbers");
 		return x + y;
@@ -13,6 +15,9 @@ public class Example {
 	public String concatStrings(String a, String b) {
 		return a.concat(b);
 	}
+    
+    public interface dummyInterface() {
+    }
 	
 	public static void main(String[] args) {
 		Example ex = new Example();
