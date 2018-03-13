@@ -24,5 +24,4 @@ public class Example {
 		System.out.println(diff);
 		System.out.println(concat);
 	}
-
 }

@@ -34,6 +34,16 @@ public class TypeCounter
 			referenceCounter = 0;
 		}
 		
+		// Getter method for the variable declarationCounter
+		public static int getDeclarationCounter() {
+			return declarationCounter;
+		}
+		
+		// Getter method for the variable referenceCounter
+		public static int getReferenceCounter() {
+			return referenceCounter;
+		}
+		
 		/***
 		 * This method takes the directory path as an argument and counts the number
 		 * of .java files in that directory
@@ -53,12 +63,9 @@ public class TypeCounter
 				 if(f.isFile() && fileName.endsWith(".java"))
 				 {
 					 javaFilesCounter += 1; 
-				 }
-			
+				 }	
 			 }
-			 return javaFilesCounter;
-			
-			
+			 return javaFilesCounter;	
 		}
 		
 		/**
@@ -78,26 +85,30 @@ public class TypeCounter
 			String filePath = null;
 			String fileName = null;
 			
-			 
-			 String[] paths = new String[javaFiles];
-			 int i = 0;
-			 for (File f : files) 
-			 {
-				 filePath = f.getAbsolutePath();
-				 fileName = f.getName();
+			String[] paths = new String[javaFiles];
+			int i = 0;
+			for (File f : files) 
+			{
+				filePath = f.getAbsolutePath();
+				fileName = f.getName();
 				 
-				 if(f.isFile() && fileName.endsWith(".java"))
-				 {
-					 paths[i] = filePath;
-					 i = i + 1;
-				 }
-			
-			 }
-			 
-			 return paths;
+				if(f.isFile() && fileName.endsWith(".java"))
+				{
+					paths[i] = filePath;
+					i = i + 1;
+				}
+			}			 
+			return paths;
 		}
 		
-		
+		/**
+		 * This method finds the file names that ends with .java in the given directory.
+		 * @param directoryPath Directory to search java files
+		 * @param javaFiles Number of java files in the directory
+		 * @return names File names of java files in the directory
+		 * @throws FileNotFoundException
+		 * @throws IOException
+		 */
 		public String[] getFilesNames(String directoryPath , int javaFiles) throws FileNotFoundException, IOException
 		{
 			File dir = new File(directoryPath);
@@ -105,25 +116,21 @@ public class TypeCounter
 			File[] files = dir.listFiles();
 			String fileName = null;
 			
-			 
-			 String[] names = new String[javaFiles];
-			 int i = 0;
-			 for (File f : files) 
-			 {
-				 fileName = f.getName();
-				
-				 if(f.isFile() && fileName.endsWith(".java"))
-				 {
-					 names[i] = fileName;
-					 i = i + 1;
-				 }
+			String[] names = new String[javaFiles];
+			int i = 0;
+			for (File f : files) 
+			{	
+				fileName = f.getName();
 			
-			 }
-			 
+				if(f.isFile() && fileName.endsWith(".java"))
+				{
+					names[i] = fileName;
+					i = i + 1;
+				}
+			} 
 			 return names;
 		}
 	
-
 		/**
 		 * This method reads the file and returns the file contents as string.
 		 * @param filePath
@@ -141,10 +148,9 @@ public class TypeCounter
 			{
 				builder.append(line);
 				builder.append(System.lineSeparator());
-				line = buffer.readLine();
-			
+				line = buffer.readLine();		
 			}
-		
+			buffer.close();		
 			String fileContent = builder.toString();
 			return fileContent;
 		}
@@ -165,7 +171,6 @@ public class TypeCounter
 			parser.setResolveBindings(true);
 			parser.setBindingsRecovery(true);
 			parser.setStatementsRecovery(true);
-			
 			
 			Map options = JavaCore.getOptions();
 			JavaCore.setComplianceOptions(JavaCore.VERSION_1_8, options);
@@ -194,7 +199,6 @@ public class TypeCounter
 					
 					if (name.equals(type))
 					{
-						System.out.println("annotaion");
 						 declarationCounter += 1;
 					}
 					
@@ -208,26 +212,22 @@ public class TypeCounter
 					
 					if (name.equals(type))
 					{
-						System.out.println("Class or interface");
 						 declarationCounter += 1;
 					}
 					
 					return true;
-				}
-				
+				}			
 				
 				public boolean visit(QualifiedName node) {
 										
 					if (node.getFullyQualifiedName().equals(type))
 					{
-						System.out.println("Qualified name");
 						 referenceCounter += 1;
 					}
 					
 					return true;
 				}
-				
-				
+							
 				public boolean visit(PrimitiveType node) {
 					
 					ITypeBinding iType = node.resolveBinding();
@@ -236,29 +236,21 @@ public class TypeCounter
 					
 					if (name.equals(type))
 					{
-						System.out.println("primitive type");
 						 referenceCounter += 1;
 					}
 					
 					return true;
 				}
-			
-				
+							
 				public boolean visit(SimpleName node) {
 										
 					if (node.getFullyQualifiedName().equals(type))
 					{
-						System.out.println("Simple name");
 						 referenceCounter += 1;
-					}
-					
+					}					
 					return true;
 				}
-				
-			
-				
-	
-				
+							
 				public boolean visit(EnumDeclaration node) {
 					
 					ITypeBinding iType = node.resolveBinding();
@@ -266,18 +258,11 @@ public class TypeCounter
 					
 					if (name.equals(type))
 					{
-						System.out.println("enum");
 						 declarationCounter += 1;
-					}
-					
-					
+					}				
 					return true;
 				}
-				
-				
-
 			});
-
 		} 
 		
 		/**
@@ -304,10 +289,8 @@ public class TypeCounter
 			 	CompilationUnit cu = p.parseFiles(content, names[i], new String[] {pathInput});
 			 	p.countTypes(cu , typeInput);
 			}
-			System.out.println(typeInput + ". Declarations found:" +declarationCounter + "; References found:" +referenceCounter);
-			
+			System.out.println(typeInput + ". Declarations found:" +declarationCounter + "; References found:" +referenceCounter);			
 		}
-
 	}
 
 
