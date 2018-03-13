@@ -218,33 +218,52 @@ public class TestTypeCounter {
 		String pathName = VARIOUS_FILES + SEPARATE_CHAR + fileName;
 		String content = tc.getFileContent(pathName);
 		CompilationUnit cu = tc.parseFiles(content, fileName, new String[] {VARIOUS_FILES});
-		tc.countTypes(cu, );
+		tc.countTypes(cu, "InterfaceExample");
 		
 		assertEquals(1, tc.getDeclarationCounter());
 	}
 
-	/*
 	@Test
 	public void testCountTypesForOneInterfaceDeclaration() throws FileNotFoundException, IOException {
 		String fileName = "OneInterfaceDeclaration.java";
 		String pathName = VARIOUS_FILES + SEPARATE_CHAR + fileName;
 		String content = tc.getFileContent(pathName);
 		CompilationUnit cu = tc.parseFiles(content, fileName, new String[] {VARIOUS_FILES});
-		tc.countTypes(cu, //Type);
+		tc.countTypes(cu, "CreateInterfaceType");
 				
 		assertEquals(1, tc.getDeclarationCounter());
+	}
+	
+	/*
+	@Test
+	public void testCountTypesForOneStringReference() throws FileNotFoundException, IOException {
+		String fileName = "OneReference.java";
+		String pathName = VARIOUS_FILES + SEPARATE_CHAR + fileName;
+		String content = tc.getFileContent(pathName);
+		CompilationUnit cu = tc.parseFiles(content, fileName,  new String[] {VARIOUS_FILES});
+		tc.countTypes(cu, "java.lang.String");
+		
+		assertEquals(1, tc.getReferenceCounter());
 	}
 	*/
 	
 	@Test
 	public void testCountTypesForEmptyFile() throws FileNotFoundException, IOException {
+		String fileName = "Nothing.java";
+		String pathName = VARIOUS_FILES + SEPARATE_CHAR + fileName;
+		String content = tc.getFileContent(pathName);
+		CompilationUnit cu = tc.parseFiles(content, fileName, new String[] {VARIOUS_FILES});
+		tc.countTypes(cu, null);
 		
+		assertEquals(0, tc.getDeclarationCounter());
+		assertEquals(0, tc.getReferenceCounter());
 	}
 	
 	/*
 	 * Test the program TypeCounter.
 	 * All the methods work correctly if executed separately.
 	 */
+	
 	/*
 	 * Assertion error
 	@Test(expected = NullPointerException.class)
@@ -256,14 +275,19 @@ public class TestTypeCounter {
 	
 	@Test
 	public void testTypeCounterForOneFile() throws FileNotFoundException, IOException {
-		
-		
-		//TYPE = "int";
-		//String[] args = {ONE_FILE_DIR, TYPE};
+		// Type = "int" 
 		String[] args = {ONE_FILE_DIR, "int"};
 		tc.main(args);
+		assertEquals(8, tc.getReferenceCounter());
 		
-		//assertEquals(8, tc.getReferenceCounter());
+		/*
+		// Type = "java.lang.String"
+		args[1] = "java.lang.String";
+		tc.main(args);
+		assertEquals(4, tc.getReferenceCounter());
+		*/
+
+		// Type = "Example"
 		args[1] = "Example";
 		tc.main(args);
 		assertEquals(1, tc.getDeclarationCounter());
@@ -278,26 +302,4 @@ public class TestTypeCounter {
 	public void testTypeCounterForNonexistingDirectory() throws FileNotFoundException, IOException {
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

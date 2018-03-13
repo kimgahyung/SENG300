@@ -1,2 +1,2 @@
-@interface InterfaceExample {
+public @interface InterfaceExample {
 }
