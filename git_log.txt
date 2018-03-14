@@ -1,3 +1,53 @@
+commit ba1af6f9a13510031787b20e1dfb4f9d2fd62950
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 13 20:31:10 2018 -0600
+
+    Comment: deleted fixed bug
+
+commit 50a8eb639bee4f59780d62ffc4812ac45c374f3e
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Tue Mar 13 20:27:15 2018 -0600
+
+    Fix: a test case and added back the refernce counter fix
+
+commit 87500fba081f00b517a3ecb79bd2e6a53771362b
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Tue Mar 13 20:17:58 2018 -0600
+
+    Fix: Duplicate lines
+
+commit e3b0799c09cde64e923663bc02dd42d95d4fcd61
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Tue Mar 13 19:44:12 2018 -0600
+
+    Revert "Fix: removed accidental duplicate method"
+    
+    This reverts commit 8fc82599fbd328afe77ac0852909d141fc6e0f4e.
+
+commit 8fc82599fbd328afe77ac0852909d141fc6e0f4e
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Tue Mar 13 19:22:50 2018 -0600
+
+    Fix: removed accidental duplicate method
+
+commit 2fdf187982754dec7db5e4e4186797b406f795e7
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Tue Mar 13 19:13:25 2018 -0600
+
+    Fix: Declaration and reference counter sometimes both being incremented
+
+commit eca78c779f9b3a5ea6bad75756f1a5ede40d397b
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 13 18:21:58 2018 -0600
+
+    Comment: Modified test class to show where the bugs are
+
+commit 7ed83748970e126491592c512ec3dd28095d6061
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 13 18:16:35 2018 -0600
+
+    Comment: Added git log file
+
 commit 5281d4dcb458b27978bbbf13fc9d28fea5fa1422
 Author: kimgahyung <kimgahyung@gmail.com>
 Date:   Tue Mar 13 18:14:45 2018 -0600
