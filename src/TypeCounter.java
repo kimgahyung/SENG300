@@ -253,6 +253,15 @@ public class TypeCounter
 					return true;
 				}
 							
+				public boolean visit(SimpleName node) {
+										
+					if (node.getFullyQualifiedName().equals(type))
+					{
+						 referenceCounter += 1;
+					}					
+					return true;
+				}
+							
 				public boolean visit(EnumDeclaration node) {
 					
 					ITypeBinding iType = node.resolveBinding();
