@@ -279,8 +279,7 @@ public class TestTypeCounter {
 		args[1] = "Example";
 		tc.main(args);
 		assertEquals(1, tc.getDeclarationCounter());		
-		// Bug - also counts the number of declarations
-		assertEquals(3, tc.getReferenceCounter());
+		assertEquals(2, tc.getReferenceCounter());
 		
 		// Type = "Example.dummyInterface"
 		args[1] = "Example.dummyInterface";

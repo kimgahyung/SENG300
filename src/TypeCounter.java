@@ -246,7 +246,7 @@ public class TypeCounter
 							
 				public boolean visit(SimpleName node) {
 										
-					if (node.getFullyQualifiedName().equals(type))
+					if (node.getFullyQualifiedName().equals(type) && !node.isDeclaration())
 					{
 						 referenceCounter += 1;
 					}					
