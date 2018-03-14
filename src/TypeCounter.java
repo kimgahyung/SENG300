@@ -275,21 +275,20 @@ public class TypeCounter
 		 * @param args
 		 */
 		public static void main(String[] args) throws FileNotFoundException, IOException {
-			TypeCounter p = new TypeCounter();
+			TypeCounter tc = new TypeCounter();
 			
-			// getting path and type from command line
 			String pathInput = args[0];
 			String typeInput = args[1];
 			
-			int javaFilesCounter = p.countJavaFiles(pathInput);
-			String[] paths = p.getFilesPaths(pathInput, javaFilesCounter);
-			String[] names = p.getFilesNames(pathInput, javaFilesCounter);
+			int javaFilesCounter = tc.countJavaFiles(pathInput);
+			String[] paths = tc.getFilesPaths(pathInput, javaFilesCounter);
+			String[] names = tc.getFilesNames(pathInput, javaFilesCounter);
 			String content = null;
 			for(int i=0 ; i < paths.length; i++)
 			{
-			 	content = p.getFileContent(paths[i]);
-			 	CompilationUnit cu = p.parseFiles(content, names[i], new String[] {pathInput});
-			 	p.countTypes(cu , typeInput);
+			 	content = tc.getFileContent(paths[i]);
+			 	CompilationUnit cu = tc.parseFiles(content, names[i], new String[] {pathInput});
+			 	tc.countTypes(cu , typeInput);
 			}
 			System.out.println(typeInput + ". Declarations found:" +declarationCounter + "; References found:" +referenceCounter);			
 		}
