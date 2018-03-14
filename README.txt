@@ -22,8 +22,6 @@ TypeCounter
 =========================================================================
 Known bugs
 =========================================================================
-- When counting references, it also counts the case when it's been 
-declared
 - When finding references of type with fully qualified name, it only
 counts the number of references of fully qualified name and does not 
 count the number of references of simple name. For example, when the
