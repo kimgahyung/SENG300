@@ -1,3 +1,15 @@
+commit 23afcd926449dc7edd482383458f291226f343ed
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Tue Mar 13 20:45:58 2018 -0600
+
+    changed p to tc and removed unnecessary comment
+
+commit f70b21363944e1f5c785ad8efd06a5b8d184a14c
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 13 20:34:51 2018 -0600
+
+    Comment: updated git log
+
 commit ba1af6f9a13510031787b20e1dfb4f9d2fd62950
 Author: kimgahyung <kimgahyung@gmail.com>
 Date:   Tue Mar 13 20:31:10 2018 -0600

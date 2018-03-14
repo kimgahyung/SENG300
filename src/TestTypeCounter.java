@@ -25,11 +25,11 @@ public class TestTypeCounter {
 	private String SEPARATE_CHAR = "\\";	
 	// Array of pathnames 
 	// {no file, nonexisting directory, Directory with one file, multiple files, various files}
-	private String[] pathNames = {"\\Desktop\\SENG300-groupProj\\ExampleFiles\\noFile", 
-						"\\Desktop\\SENG300-groupProj\\ExampleFiles\\nonExistingFile",
-						"\\Desktop\\SENG300-groupProj\\ExampleFiles\\oneFile",
-						"\\Desktop\\SENG300-groupProj\\ExampleFiles\\moreThanOneFile",
-						"\\Desktop\\SENG300-groupProj\\ExampleFiles\\variousJavaFiles"
+	private String[] pathNames = {"\\SENG300-groupProj\\ExampleFiles\\noFile", 
+						"\\SENG300-groupProj\\ExampleFiles\\nonExistingFile",
+						"\\SENG300-groupProj\\ExampleFiles\\oneFile",
+						"\\SENG300-groupProj\\ExampleFiles\\moreThanOneFile",
+						"\\SENG300-groupProj\\ExampleFiles\\variousJavaFiles"
 	};
 	
 	private String NO_FILE_DIR;
