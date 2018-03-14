@@ -1,0 +1,215 @@
+commit 5281d4dcb458b27978bbbf13fc9d28fea5fa1422
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 13 18:14:45 2018 -0600
+
+    Comment: Added test class and README file
+
+commit b61904cd778b72cc5d4f49943b4b70055a7717d8
+Merge: e320295 9a9deeb
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 13 15:13:07 2018 -0600
+
+    no message
+
+commit 9a9deebfd2e3d2a757362aa8020fde8d98699590
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Tue Mar 13 15:10:27 2018 -0600
+
+    added cover page.
+
+commit e32029561eaff29fd5c3553619898e2ffb7000ec
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 13 14:46:59 2018 -0600
+
+    Comment: changes
+
+commit 201e465186941e48c9a00cedb22ac60307cd3215
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 22:57:04 2018 -0600
+
+    Comment: Added methods in test class (Will be added more files and methods)
+
+commit 618cba8b2def53a9d10f7508262ab9b9a990701c
+Merge: 5618aa2 e44f4cb
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 22:14:34 2018 -0600
+
+    no message
+
+commit 5618aa27de0fd32490b0da127e3cd160c0ec562e
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 22:14:05 2018 -0600
+
+    Comment: Added files for testing
+
+commit e44f4cba257d640daaf6eeb2713ad85d37f538e8
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Mon Mar 12 19:55:35 2018 -0600
+
+    Added a single pdf file for all diagrams
+
+commit 537a25c8485bfc88c468b0f13d3d49c67695e143
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 18:23:05 2018 -0600
+
+    Comment: Applied stash
+
+commit 883524647424cba8775f6b400fadc54eab0fc315
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 18:22:14 2018 -0600
+
+    Comment: Added files
+
+commit 714fcefc7281999d8b0bd3fd16385ef44f3eb02c
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Mon Mar 12 17:34:38 2018 -0600
+
+    Fixed Class Diagram
+
+commit b946bbc7d5974e84d2c9873879d50e27badaa8b8
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 16:05:10 2018 -0600
+
+    Commnet: Changed constructor to default again
+
+commit c797bf4ff363c34d0469720d69222ecdbaadc3f7
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 01:01:44 2018 -0600
+
+    Comment: Added junit 4 libarary and test class (not yet done)
+
+commit 04162cc2f472403d864f8f9b2162033009a3119e
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 00:57:59 2018 -0600
+
+    Comment: Changed constructor to public (for testing)
+
+commit 2429a6281622c1f3f972ca66c4a3dee1e70d7bd9
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Mon Mar 12 00:56:57 2018 -0600
+
+    Comment: added jar files for ASTParser
+
+commit 537c68a23f7c5b613371f0b63027cd8b9926526d
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Sun Mar 11 18:58:56 2018 -0600
+
+    Added: State Diagram and Class Diagram
+
+commit 551618a365118228c044cce3f4ae3b79f2886f62
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Sun Mar 11 16:30:06 2018 -0600
+
+    no message
+
+commit 54af59bff30359f98d7216d76e5a63c979cfdb66
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Sun Mar 11 16:27:48 2018 -0600
+
+    added printing the results to the diagram
+
+commit 9426c8daa34ea6f90ca45379750964ed18f7618d
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Sun Mar 11 15:59:28 2018 -0600
+
+    changed the printing statement;
+    added sequence diagram;
+
+commit f3b7d4cd7258f89f75a7ee86410ac94efbb4eef9
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Sun Mar 11 14:34:48 2018 -0600
+
+    Changed fields to private
+
+commit 3ae6f2d7d5818165bd629a829f2b3218d937d246
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Sat Mar 10 16:57:55 2018 -0700
+
+    Removed unused import statement
+
+commit 813a6db3bcd776a7a64f577dcc21e494c52d9b92
+Author: tyler.chow <tyler.chow@cs.ucalgary.ca>
+Date:   Sat Mar 10 00:19:55 2018 -0700
+
+    Added command line arguments, removed keyboard input
+
+commit 95bf75273372c8f2122660e9d2900b106c08251d
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Fri Mar 9 21:54:33 2018 -0700
+
+    Comment: Added javadoc for the class
+
+commit 05b2c2d80995a1e7ed38eb107e27e9bef9f8ff24
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Fri Mar 9 20:45:08 2018 -0700
+
+    added countJavaFileMethod and removed some comments
+
+commit 17da550e3b8f916d93f2228232a1bb2f1523225a
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Fri Mar 9 17:30:51 2018 -0700
+
+    fixing a typo
+
+commit 0a7430688cc0c3976b70aaf0584052fbf2ebcd2e
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Fri Mar 9 16:46:23 2018 -0700
+
+    updated code with resolved bindings
+
+commit d789267372f2f779e894b3b2eb3aa4bbdd674603
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Wed Mar 7 16:37:51 2018 -0700
+
+    Comment: Deleted variables not used
+
+commit 3d92c92d45b215396903c5e06e756c492b19788d
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Wed Mar 7 16:35:30 2018 -0700
+
+    Comment: Changed static method to non static method and created instance inside the main method
+
+commit 98c5f6a9689ab5ad8ed6171c2897d312d70a0b0f
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Wed Mar 7 16:05:41 2018 -0700
+
+    Comment: Modified the main method to take user input for the path and Java type
+
+commit a45eda1af49a2410b091771d338534909e6816c1
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Wed Mar 7 15:47:34 2018 -0700
+
+    Comment: Added javadocs for methods
+
+commit 2db798eb7cfdbf796c7e2a36c3887bf9a81c895d
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Wed Mar 7 15:38:57 2018 -0700
+
+    Comment:
+    Relocated import statements
+
+commit 6263a75678c7010061a662746291a3d436ab1179
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Wed Mar 7 15:37:00 2018 -0700
+
+    Comment:
+    added method parseFiles
+
+commit 104dcc8d312606697a83a035ac006e69b9eb7df6
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Wed Mar 7 00:18:47 2018 -0700
+
+    Initial code for loading files
+
+commit a51fc1062465ed489fc94fc6fbeed5fcba032c03
+Author: DESKTOP-F9095HL\Zahra <zahra.alibrahim@gmail.com>
+Date:   Wed Mar 7 00:09:18 2018 -0700
+
+    initial code for loading files
+
+commit 45a927283eb055829d5056a48cdb06d87ba1c29a
+Author: kimgahyung <kimgahyung@gmail.com>
+Date:   Tue Mar 6 18:54:32 2018 -0700
+
+    Comment:
+    Structure for the project
