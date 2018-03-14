@@ -71,7 +71,7 @@ public class TestTypeCounter {
 	@Test
 	public void testCountJavaFilesForMoreThanOneFile() throws FileNotFoundException, IOException {
 		int result = tc.countJavaFiles(MORE_THAN_ONE_FILE_DIR);
-		assertEquals(5, result);
+		assertEquals(6, result);
 	}
 	
 	@Test(expected = NullPointerException.class)
@@ -97,8 +97,8 @@ public class TestTypeCounter {
 	
 	@Test
 	public void testGetFilesPathsForMoreThanOneFile() throws FileNotFoundException, IOException {
-		String[] result = tc.getFilesPaths(MORE_THAN_ONE_FILE_DIR, 5);
-		assertEquals(5, result.length);		
+		String[] result = tc.getFilesPaths(MORE_THAN_ONE_FILE_DIR, 6);
+		assertEquals(6, result.length);		
 	}
 	
 	@Test(expected = NullPointerException.class)
@@ -124,8 +124,8 @@ public class TestTypeCounter {
 	
 	@Test
 	public void testGetFilesNamesForMoreThanOneFile() throws FileNotFoundException, IOException {
-		String[] result = tc.getFilesNames(MORE_THAN_ONE_FILE_DIR, 5);
-		assertEquals(5, result.length);
+		String[] result = tc.getFilesNames(MORE_THAN_ONE_FILE_DIR, 6);
+		assertEquals(6, result.length);
 	}
 	
 	@Test(expected = NullPointerException.class)
@@ -292,7 +292,35 @@ public class TestTypeCounter {
 	
 	@Test
 	public void testTypeCounterForMoreThanOneFile() throws FileNotFoundException, IOException {
+		// Type = "annotationInExample2"
+		String[] args = {MORE_THAN_ONE_FILE_DIR, "Example2.annotationInExample2"};
+		tc.main(args);
+		assertEquals(1, tc.getDeclarationCounter());
 		
+		// Type = "Example2.InnerClass"
+		args[1] = "Example2.InnerClass";
+		tc.main(args);
+		assertEquals(1, tc.getDeclarationCounter());
+		
+		// Type = "float"
+		args[1] = "float";
+		tc.main(args);
+		assertEquals(3, tc.getReferenceCounter());
+		
+		// Type = "double"
+		args[1] = "double";
+		tc.main(args);
+		assertEquals(3, tc.getReferenceCounter());
+		
+		// Type = "Integer"
+		args[1] = "Integer";
+		tc.main(args);
+		assertEquals(3, tc.getReferenceCounter());
+		
+		// Type = "int"
+		args[1] = "int";
+		tc.main(args);
+		assertEquals(10, tc.getReferenceCounter());
 	}
 	
 	@Test(expected = NullPointerException.class)

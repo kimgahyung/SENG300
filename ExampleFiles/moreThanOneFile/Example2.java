@@ -1,6 +1,5 @@
 public class Example2 {
     private @interface annotationInExample2 {}
-    private @interface anotherAnnotationo {}
     private class InnerClass {}
     
     public float addFloats(float x, float y) {
