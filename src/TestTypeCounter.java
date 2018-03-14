@@ -247,6 +247,7 @@ public class TestTypeCounter {
 		CompilationUnit cu = tc.parseFiles(content, fileName,  new String[] {VARIOUS_FILES});
 		tc.countTypes(cu, "java.lang.String");
 		
+		// Bug - only counts "java.lang.String" and not "String"
 		assertEquals(1, tc.getReferenceCounter());
 	}
 	
@@ -277,7 +278,9 @@ public class TestTypeCounter {
 		// Type = "Example"
 		args[1] = "Example";
 		tc.main(args);
-		assertEquals(1, tc.getDeclarationCounter());
+		assertEquals(1, tc.getDeclarationCounter());		
+		// Bug - also counts the number of declarations
+		assertEquals(3, tc.getReferenceCounter());
 		
 		// Type = "Example.dummyInterface"
 		args[1] = "Example.dummyInterface";
